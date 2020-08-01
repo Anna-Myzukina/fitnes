@@ -46,22 +46,22 @@ class WorkoutList extends StatelessWidget {
         title: 'Test2',
         author: 'Anna2',
         description: 'Test Workout2',
-        level: 'Beginner'),
+        level: 'Intermediate'),
     Workout(
         title: 'Test3',
         author: 'Anna3',
         description: 'Test Workout3',
-        level: 'Beginner'),
+        level: 'Preintermediate'),
     Workout(
         title: 'Test4',
         author: 'Anna4',
         description: 'Test Workout4',
-        level: 'Beginner'),
+        level: 'Advanced'),
     Workout(
         title: 'Test5',
         author: 'Anna5',
         description: 'Test Workout5',
-        level: 'Beginner'),
+        level: 'Master'),
   ];
 
   @override
@@ -80,18 +80,21 @@ class WorkoutList extends StatelessWidget {
                 child: ListTile(
                   contentPadding: EdgeInsets.symmetric(horizontal: 10),
                   leading: Container(
-                      padding: EdgeInsets.only(right: 12),
-                      child: Icon(Icons.fitness_center, color: Colors.white),
-                      decoration: BoxDecoration(
-                        border: Border(right: BorderSide(width: 1, color: Colors.white)),
-                      ),
+                    padding: EdgeInsets.only(right: 12),
+                    child: Icon(Icons.fitness_center, color: Colors.white),
+                    decoration: BoxDecoration(
+                      border: Border(
+                          right: BorderSide(width: 1, color: Colors.white)),
+                    ),
                   ),
                   title: Text(
                     workouts[i].title,
                     style: TextStyle(
                         color: Colors.red, fontWeight: FontWeight.bold),
                   ),
-                  trailing: Icon(Icons.keyboard_arrow_right, color: Colors.white),
+                  trailing:
+                      Icon(Icons.keyboard_arrow_right, color: Colors.white),
+                  subtitle: subtitle(context, workouts[i]),
                 ),
               ),
             );
@@ -100,4 +103,46 @@ class WorkoutList extends StatelessWidget {
       ),
     );
   }
+}
+
+Widget subtitle(BuildContext context, Workout workout) {
+  var color = Colors.grey;
+  double indicatorLevel = 0;
+
+  switch (workout.level) {
+    case 'Beginner':
+      color = Colors.red;
+      indicatorLevel = 0.23;
+      break;
+    case 'Intermediate':
+      color = Colors.orange;
+      indicatorLevel = 0.33;
+      break;
+    case 'Preintermediate':
+      color = Colors.yellow;
+      indicatorLevel = 0.53;
+      break;
+    case 'Advanced':
+      color = Colors.blue;
+      indicatorLevel = 0.76;
+      break;
+    case 'Master':
+      color = Colors.purple;
+      indicatorLevel = 1;
+      break;
+  }
+
+  return Row(
+    children: <Widget>[
+      Expanded(
+        flex: 1,
+         child: LinearProgressIndicator(
+           backgroundColor: Colors.white,
+           value: indicatorLevel,
+           valueColor: AlwaysStoppedAnimation(color),
+         )
+         
+         )
+      ],
+  );
 }

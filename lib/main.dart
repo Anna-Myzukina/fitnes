@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Fitnes tracker',
       theme: ThemeData(
-        primaryColor: Colors.green,
+        primaryColor: Colors.green[200],
         // textTheme: TextTheme(title: TextStyle(color: Colors.white))
       ),
       home: HomePage(),
@@ -127,7 +127,7 @@ Widget subtitle(BuildContext context, Workout workout) {
       indicatorLevel = 0.76;
       break;
     case 'Master':
-      color = Colors.purple;
+      color = Colors.green;
       indicatorLevel = 1;
       break;
   }
@@ -141,8 +141,18 @@ Widget subtitle(BuildContext context, Workout workout) {
            value: indicatorLevel,
            valueColor: AlwaysStoppedAnimation(color),
          )
-         
-         )
+         ),
+      SizedBox(width: 20),
+      Expanded(
+        flex: 2,
+        child: Text(
+          workout.level,
+          style: TextStyle(
+                color: Colors.white, 
+                fontWeight: FontWeight.bold),
+
+         ),
+        ),
       ],
   );
 }

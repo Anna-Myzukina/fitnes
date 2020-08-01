@@ -11,8 +11,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Fitnes tracker',
       theme: ThemeData(
-          primaryColor: Colors.green,
-          textTheme: TextTheme(title: TextStyle(color: Colors.white))),
+        primaryColor: Colors.green,
+        // textTheme: TextTheme(title: TextStyle(color: Colors.white))
+      ),
       home: HomePage(),
     );
   }
@@ -62,8 +63,32 @@ class WorkoutList extends StatelessWidget {
         description: 'Test Workout5',
         level: 'Beginner'),
   ];
+
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      child: Container(
+        child: ListView.builder(
+          itemCount: workouts.length,
+          itemBuilder: (context, i) {
+            return Card(
+              elevation: 2.0,
+              margin: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+              child: Container(
+                decoration: BoxDecoration(color: Color.fromRGBO(50, 65, 85, 0.9)),
+                child: ListTile(
+                  title: Text(
+                    workouts[i].title,
+                    style: TextStyle(
+                        color: Colors.red,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+            );
+          },
+        ),
+      ),
+    );
   }
 }

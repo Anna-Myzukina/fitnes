@@ -1,5 +1,6 @@
+import 'package:fitnes/screens/landingPage.dart';
 import 'package:flutter/material.dart';
-import 'screens/authorisationPage.dart';
+import 'screens/landingPage.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.green[200],
         // textTheme: TextTheme(title: TextStyle(color: Colors.white))
       ),
-      home: AuthorisationPage(),
+      home: LandingPage(),
     );
   }
 }

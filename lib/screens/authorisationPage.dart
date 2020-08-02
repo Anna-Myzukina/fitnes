@@ -125,57 +125,85 @@ class _AuthorisationPageState extends State<AuthorisationPage> {
       _passwordController.clear();
     }
 
+    Widget _bottomWave() {
+      return Expanded(
+        child: Align(
+          child: ClipPath(
+            child: Container(
+              color: Colors.white,
+              height: 300,
+            ),
+            clipper: BottomWaveClipper(),
+          ),
+          alignment: Alignment.bottomCenter,
+        ),
+      );
+    }
+
     return Scaffold(
         backgroundColor: Colors.blueGrey,
         body: Column(
           children: <Widget>[
             _logo(),
-            (
-              showLogin
-              ? Column(
-                children: <Widget>[
-                  _form('login'.toUpperCase(), _buttonAction),
-                  Padding(
-                    padding: EdgeInsets.all(10),
-                    child: GestureDetector(
-                      child: Text('Not Registered yet? Register!', style: TextStyle(fontSize: 20, color: Colors.white)
-                      ),
-                      onTap: (){
-                        setState(
-                          () {
-                          showLogin = false;
-                        }
-                        );
-                      }
-                      
-                    )
+            (showLogin
+                ? Column(
+                    children: <Widget>[
+                      _form('login'.toUpperCase(), _buttonAction),
+                      Padding(
+                          padding: EdgeInsets.all(10),
+                          child: GestureDetector(
+                              child: Text('Not Registered yet? Register!',
+                                  style: TextStyle(
+                                      fontSize: 20, color: Colors.white)),
+                              onTap: () {
+                                setState(() {
+                                  showLogin = false;
+                                });
+                              }))
+                    ],
                   )
-                ],
-                )
-            : Column(
-                children: <Widget>[
-                  _form('register'.toUpperCase(), _buttonAction),
-                  Padding(
-                    padding: EdgeInsets.all(10),
-                    child: GestureDetector(
-                      child: Text('Alrady Registered? Login!', style: TextStyle(fontSize: 20, color: Colors.white)
-                      ),
-                      onTap: (){
-                        setState(
-                          () {
-                          showLogin = true;
-                        }
-                        );
-                      }
-                      
-                    )
+                : Column(
+                    children: <Widget>[
+                      _form('register'.toUpperCase(), _buttonAction),
+                      Padding(
+                          padding: EdgeInsets.all(10),
+                          child: GestureDetector(
+                              child: Text('Alrady Registered? Login!',
+                                  style: TextStyle(
+                                      fontSize: 20, color: Colors.white)),
+                              onTap: () {
+                                setState(() {
+                                  showLogin = true;
+                                });
+                              }
+                              ),
+                            )
+                    ],
                   )
-                ],
-                )
-            )
-            
+               ),
+                  _bottomWave()
           ],
         )
-        );
+      );
   }
 }
+
+  class BottomWaveClipper extends CustomClipper<Path> {
+    @override
+    Path getClip(Size size) {
+      var path = Path();
+      path.moveTo(size.width, 0.0);
+      path.lineTo(size.width, size.height);
+      path.lineTo(0.0, size.height);
+      path.lineTo(0.0, size.height + 5);
+      var secondControlPoint = Offset(size.width - (size.width / 6), size.height);
+      var secondEndPoint = Offset(size.width, 0.0);
+      path.quadraticBezierTo(secondControlPoint.dx, secondControlPoint.dy,
+      secondEndPoint.dx, secondEndPoint.dy);
+
+      return path;
+    }
+
+    @override
+    bool shouldReclip(CustomClipper<Path> oldClipper) => false;
+  }

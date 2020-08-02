@@ -21,7 +21,7 @@ samples, guidance on mobile development, and a full API reference.
 * [firebase_auth: ^0.16.1](https://pub.dev/packages/firebase_auth)
 * [provider 4.3.1](https://pub.dev/packages/provider)
 * [cloud_firestore: ^0.13.7](https://pub.dev/packages/cloud_firestore)
-* [toast 0.1.5](https://pub.dev/packages/toast)
+* [fluttertoast 7.0.2](https://pub.dev/packages/fluttertoast)
 
 ### Bottom wave effect:
 

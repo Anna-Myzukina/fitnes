@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1082120675760",
+    "firebase_url": "https://fittrak-dev.firebaseio.com",
+    "project_id": "fittrak-dev",
+    "storage_bucket": "fittrak-dev.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1082120675760:android:aee9ad343f589d9829b675",
+        "android_client_info": {
+          "package_name": "com.fittrak.fittrak"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1082120675760-qv9p3d0cq3pjvdf2gc6ao5t71vk80gaa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC177IjRFrSiV_2TEG6Ds0ml-JJabdEsog"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1082120675760-qv9p3d0cq3pjvdf2gc6ao5t71vk80gaa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

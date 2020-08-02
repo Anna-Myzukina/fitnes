@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'screens/homePage.dart';
 import 'screens/authorisationPage.dart';
 
 void main() {

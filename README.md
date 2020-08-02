@@ -17,6 +17,8 @@ samples, guidance on mobile development, and a full API reference.
 
 ### Bottom wave effect:
 
+![screen](https://github.com/Anna-Myzukina/fitnes/blob/master/Screenshot%20from%202020-08-02%2016-04-01.png)
+
 - [1] add Widget _bottomWave
 
             Widget _bottomWave() {

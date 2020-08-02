@@ -15,6 +15,14 @@ For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
+### DEpendensies:
+(:ist of dependesies you can find in the pubspec.yaml file)
+* flutter
+* [firebase_auth: ^0.16.1](https://pub.dev/packages/firebase_auth)
+* [provider 4.3.1](https://pub.dev/packages/provider)
+* [cloud_firestore: ^0.13.7](https://pub.dev/packages/cloud_firestore)
+* [toast 0.1.5](https://pub.dev/packages/toast)
+
 ### Bottom wave effect:
 
 ![screen](https://github.com/Anna-Myzukina/fitnes/blob/master/Screenshot%20from%202020-08-02%2016-04-01.png)

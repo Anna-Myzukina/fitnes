@@ -1,6 +1,7 @@
+import 'package:flutter/material.dart';
 import 'package:fitnes/screens/authorisationPage.dart';
 import 'package:fitnes/screens/homePage.dart';
-import 'package:flutter/material.dart';
+
 
 class LandingPage extends StatelessWidget {
   @override
